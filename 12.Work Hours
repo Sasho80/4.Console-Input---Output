@@ -1,0 +1,26 @@
+using System;
+
+class WorkHours
+{
+    static void Main()
+    {
+        int h = int.Parse(Console.ReadLine());
+        int d = int.Parse(Console.ReadLine());
+        int p = int.Parse(Console.ReadLine());
+        double baking = d - (d * 0.1);
+        double workDays = baking * 12;
+        double efficientWork = workDays * p*0.01;
+        double difference = h -(int)efficientWork;
+        if (difference<=(12-(12*0.1)))
+        {
+            Console.WriteLine("Yes");
+            Console.WriteLine((int)Math.Abs(difference));
+        }
+        else
+        {
+            Console.WriteLine("No");
+            Console.WriteLine("-"+(int)Math.Abs(difference));
+        }
+    }
+}
+
