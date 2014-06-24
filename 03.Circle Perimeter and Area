@@ -1,0 +1,12 @@
+using System;
+
+class CirclePerimeterAndArea
+{
+    static void Main()
+    {
+        double radius = double.Parse(Console.ReadLine());
+        Console.WriteLine("perimeter:{0:F2}", 2 * (double)Math.PI * radius);
+        Console.WriteLine("area:{0:F2}",Math.PI*Math.Pow(radius,2));
+    }
+}
+
