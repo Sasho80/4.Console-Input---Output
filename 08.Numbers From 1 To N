@@ -1,14 +1,18 @@
 using System;
 
-class NumbersFrom1ToN
+class SumOf5Numbers
 {
     static void Main()
     {
-        int num=int.Parse(Console.ReadLine());
-        for (int i = 1; i <=num; i++)
+        double sum = 0;
+        Console.WriteLine("Enter five numbers with space:");
+        string[] num = Console.ReadLine().Split();
+        for (int i = 0; i < 5; i++)
         {
-            Console.WriteLine(i);
+            double x = Convert.ToDouble(num[i]);
+            sum = sum + x;
         }
+        Console.WriteLine(sum);
     }
 }
 
