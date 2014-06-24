@@ -1,0 +1,37 @@
+using System;
+
+class NumbersInIntervalDividableByGivenNumber
+{
+    static void Main()
+    {
+        int start = int.Parse(Console.ReadLine());
+        int end = int.Parse(Console.ReadLine());
+        int p = 0;
+        while (end % 5 != 0)
+        {
+            end--;
+        }
+        for (int i = start; i <=end; i++)
+        {
+            if (i % 5 == 0)
+            {
+                p++;
+                if (i==end)
+                {
+                    Console.WriteLine(i); 
+                }
+                else 
+                {
+                    Console.Write(i + "," + " ");
+                }
+            }
+            else
+            {
+                continue;    
+            }
+        }
+        Console.WriteLine("p={0}",p);
+        Console.WriteLine();
+    }
+}
+
