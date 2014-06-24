@@ -1,0 +1,14 @@
+using System;
+
+class QadraticEquation
+{
+    static void Main()
+    {
+        double a = double.Parse(Console.ReadLine());
+        double b = double.Parse(Console.ReadLine());
+        double c = double.Parse(Console.ReadLine());
+        Console.WriteLine(((-b+Math.Sqrt(Math.Pow(b,2)-4*a*c))/(2*a)));
+        Console.WriteLine(((-b - Math.Sqrt(Math.Pow(b, 2) - 4 * a * c)) / (2 * a)));
+    }
+}
+
