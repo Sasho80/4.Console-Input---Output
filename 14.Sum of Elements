@@ -1,0 +1,36 @@
+using System;
+
+class SumOfElements
+{
+    static void Main()
+    {
+        string[] num = Console.ReadLine().Split();
+        int sum = 0;
+        int difference = 0;
+        int x = 0;
+        int maxNum = Convert.ToInt32(num[1]);
+        int max = 0;
+        for (int i = 0; i < num.Length; i++)
+        {
+            x = Convert.ToInt32(num[i]);
+            sum = sum + x;
+            if (max<x)
+            {
+                max =Math.Max(Convert.ToInt32(num[i]),maxNum);
+            }
+            difference = Math.Abs(sum-max-max);
+        }
+        sum = sum - max;
+        for (int i = 0; i < num.Length; i++)
+        {
+            x = Convert.ToInt32(num[i]);
+            if (sum==x)
+            {
+                Console.WriteLine("Yes, sum={0}",num[i]);
+                return;
+            }
+        }
+        Console.WriteLine("No, diff={0}", difference);
+    }
+}
+
