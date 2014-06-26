@@ -1,0 +1,31 @@
+using System;
+
+class NewHouse
+{
+    static void Main()
+    {
+        int N = int.Parse(Console.ReadLine());
+        int roofRows = (N / 2) + 1;
+        int row = N + roofRows;
+        int astericsNumRoof=1;
+        for (int i = 1; i <=roofRows; i++)
+        {
+            string asterisksRoof = new string('*', astericsNumRoof);
+            string roofDash = new string('-', (N - astericsNumRoof) / 2);
+            Console.Write(roofDash);
+            Console.Write(asterisksRoof);
+            Console.Write(roofDash);
+            Console.WriteLine();
+            astericsNumRoof = astericsNumRoof + 2;
+        }
+        string asterisksFloor = new string('*',N-2);
+        for (int i = 0; i < N; i++)
+        {
+            Console.Write('|');
+            Console.Write(asterisksFloor);
+            Console.Write('|');
+            Console.WriteLine();
+        }
+    }
+}
+
