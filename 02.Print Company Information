@@ -4,34 +4,37 @@ class PrintCompanyInformation
 {
     static void Main()
     {
-        Console.WriteLine("Enter Company name:");
-        string companyInfo = Console.ReadLine();
-        Console.WriteLine("Enter Company address:");
+        Console.WriteLine("Enter company Name:");
+        string companyName = Console.ReadLine();
+        Console.WriteLine("Enter company address:");
         string companyAddress = Console.ReadLine();
-        Console.WriteLine("Enter Phone number:");
-        string phoneNum = Console.ReadLine();
-        Console.WriteLine("Enter Fax number:");
-        string faxNum = Console.ReadLine();
-        Console.WriteLine("Enter Web site:");
+        Console.WriteLine("Phone number:");
+        string phoneNumber = Console.ReadLine();
+        Console.WriteLine("Enter fax number:");
+        string faxNumber = Console.ReadLine();
+        if (faxNumber==string.Empty )
+        {
+            faxNumber = "(no fax)";
+        }
+        Console.WriteLine("Enter web site:");
         string webSite = Console.ReadLine();
-        Console.WriteLine("Enter Menager first name:");
+        Console.WriteLine("Enter Manager first name:");
         string firstName = Console.ReadLine();
-        Console.WriteLine("Enter Menager last name:");
+        Console.WriteLine("Enter Manager last name:");
         string lastName = Console.ReadLine();
-        Console.WriteLine("Enter Menager age:");
-        string ManagerAge = Console.ReadLine();
-        Console.WriteLine("Enter Menager phone:");
-        string ManagerPhone = Console.ReadLine();
-        Console.WriteLine();
-        Console.WriteLine(companyInfo);
-        Console.WriteLine("Address:"+companyAddress);
-        Console.WriteLine("Tel."+phoneNum);
-        Console.WriteLine("Fax:"+faxNum);
-        Console.WriteLine("Web site"+webSite);
-        Console.Write("Manager:"+ firstName+" "+lastName);
-        Console.Write("("+"age: "+ManagerAge);
-        Console.Write(" tel. " + ManagerPhone + ")");
-        Console.WriteLine();
+        Console.WriteLine("Enter Manager age:");
+        string age = Console.ReadLine();
+        Console.WriteLine("Enter Manager phone:");
+        string phone = Console.ReadLine();
+        Console.WriteLine("{0}", companyName);
+        Console.WriteLine("Address:{0}", companyAddress);
+        Console.WriteLine("Tel. {0}", phoneNumber);
+        Console.WriteLine("Fax {0}", faxNumber);
+        Console.WriteLine("Web site: {0}", webSite);
+        Console.Write("Manager: {0} ", firstName);
+        Console.Write("{0}", lastName);
+        Console.WriteLine("(age: {0}", age);
+        Console.WriteLine("tel. {0})", phone);
     }
 }
 
