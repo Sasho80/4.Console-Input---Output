@@ -4,15 +4,15 @@ class SumOfNNumbers
 {
     static void Main()
     {
+        Console.WriteLine("Enter the number of numbers: ");
         int n = int.Parse(Console.ReadLine());
-        double[] num = new double[n];
         double sum = 0;
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i <n; i++)
         {
-            num[i]=double.Parse(Console.ReadLine());
-            sum = sum + num[i];
+            double num = double.Parse(Console.ReadLine());
+            sum += num;
         }
-        Console.WriteLine(sum);
+        Console.WriteLine("{0}", sum);
     }
 }
 
