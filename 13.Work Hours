@@ -7,19 +7,16 @@ class WorkHours
         int h = int.Parse(Console.ReadLine());
         int d = int.Parse(Console.ReadLine());
         int p = int.Parse(Console.ReadLine());
-        double baking = d - (d * 0.1);
-        double workDays = baking * 12;
-        double efficientWork = workDays * p*0.01;
-        double difference = h -(int)efficientWork;
-        if (difference<=(12-(12*0.1)))
-        {
-            Console.WriteLine("Yes");
-            Console.WriteLine((int)Math.Abs(difference));
-        }
-        else
+        double efficientWorkHours = ((d - (d * (10 / 100.0))) * 12) * (p / 100.0);
+        if (h>efficientWorkHours)
         {
             Console.WriteLine("No");
-            Console.WriteLine("-"+(int)Math.Abs(difference));
+            Console.WriteLine("{0}",(int)efficientWorkHours-h);
+        }
+        else if (h <= efficientWorkHours)
+        {
+            Console.WriteLine("Yes");
+            Console.WriteLine("{0}", Math.Abs((int)efficientWorkHours-h));
         }
     }
 }
