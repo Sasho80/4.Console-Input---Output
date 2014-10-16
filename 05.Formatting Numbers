@@ -1,40 +1,42 @@
 using System;
- 
+
 class FormattingNumbers
 {
     static void Main()
     {
-        Console.WriteLine("Enter number a:");
+        Console.WriteLine("Enter an integer a:");
         int a = int.Parse(Console.ReadLine());
         if (a<0||a>500)
         {
-            Console.WriteLine("Number is out of range!");
+            Console.WriteLine("Invalid input!");
             return;
         }
-        Console.WriteLine("Enter b and c:");
-        string b=Console.ReadLine();
-        string c =Console.ReadLine();
-        Console.Write("|{0,-10:X}|",a);
-        Console.Write("{0,10}|",Convert.ToString((long)a,2).PadLeft(10,'0'));
-        double numB = double.Parse(b);
-        int indexB = b.IndexOf(".");
-        if (indexB == -1)
+        Console.WriteLine("Enter a floating-point b:");
+        double b = double.Parse(Console.ReadLine());
+        Console.WriteLine("Enter a floating-point c:");
+        double c = double.Parse(Console.ReadLine());
+        Console.Write("|{0,-10}", Convert.ToString(a, 16).ToUpper());
+        Console.Write("|{0,10}|",
+        Convert.ToString(a, 2).PadLeft(10, '0'));
+        string str = b.ToString();
+        int index = str.IndexOf(".");
+        if (index == -1)
         {
-            Console.Write("{0,10}|", numB);
+            Console.Write("{0,10}|", b);
         }
         else
         {
-            Console.Write("{0,10:F2}|", numB);
+            Console.Write("{0,10:F2}|", b);
         }
-        double numC = double.Parse(c);
-        int indexC = c.IndexOf(".");
-        if (indexC==-1)
+        str = c.ToString();
+        index = str.IndexOf(".");
+        if (index==-1)
         {
-            Console.Write("{0,-10}|",numC); 
+            Console.Write("{0,-10}|", c);
         }
         else
         {
-            Console.Write("{0,-10:F3}|",numC);
+            Console.Write("{0,-10:F3}|", c);
         }
         Console.WriteLine();
     }
