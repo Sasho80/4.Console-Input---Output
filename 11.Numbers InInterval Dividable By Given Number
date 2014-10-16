@@ -4,34 +4,18 @@ class NumbersInIntervalDividableByGivenNumber
 {
     static void Main()
     {
+        Console.WriteLine("Enter start and end value");
         int start = int.Parse(Console.ReadLine());
         int end = int.Parse(Console.ReadLine());
         int p = 0;
-        while (end % 5 != 0)
-        {
-            end--;
-        }
         for (int i = start; i <=end; i++)
         {
-            if (i % 5 == 0)
+            if (i%5==0)
             {
-                p++;
-                if (i==end)
-                {
-                    Console.WriteLine(i); 
-                }
-                else 
-                {
-                    Console.Write(i + "," + " ");
-                }
-            }
-            else
-            {
-                continue;    
+                p++; 
             }
         }
-        Console.WriteLine("p={0}",p);
-        Console.WriteLine();
+        Console.WriteLine(p);
     }
 }
 
