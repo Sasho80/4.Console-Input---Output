@@ -1,0 +1,54 @@
+using System;
+
+class CatchTheBits
+{
+    static void Main()
+    {
+        int n = int.Parse(Console.ReadLine());
+        int step = int.Parse(Console.ReadLine());
+        int countTakeBits = 0;
+        if (step<=8)
+        {
+            countTakeBits = n * 8 / step;
+        }
+        else
+        {
+            countTakeBits = ((n * 8) - step) / n;
+        }
+        int currentPosition = 8;
+        string result = string.Empty;
+        int positions = 0;
+        int num = int.Parse(Console.ReadLine());
+        int countNum = 1;
+        for (int i = 0, k = 1; i < countTakeBits; i++, k = 1 + i * step)
+        {
+            currentPosition = Math.Abs(currentPosition - step);
+            int nRightP = num >> currentPosition;
+            int bit = nRightP & 1;
+            if (currentPosition==0&&n>countNum)
+            {
+                num = int.Parse(Console.ReadLine());
+                currentPosition = 8;
+                countNum++;
+            }
+            result += bit.ToString();
+            positions = result.Length;
+            if (positions == 8)
+            {
+                Console.WriteLine("{0}", Convert.ToInt32(result,2).ToString());
+                positions = 0;
+                result = string.Empty;
+            }
+        }
+        if (positions < 8&&positions!=0)
+        {
+            for (int j = 0; j < 8 - positions; j++)
+            {
+                int i = 0;
+                result += i.ToString();
+            }
+            Console.WriteLine("{0}", Convert.ToInt32(result,2).ToString());
+        }
+    }
+}
+
